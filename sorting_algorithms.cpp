@@ -33,5 +33,18 @@ void 	bubble_sort (int *array, unsigned long length){
 }
 
 void 	insertion_sort (int *array, unsigned long length){
-    
+    int i, key, j;
+    for (i = 1; i < (int)length; i++)
+    {
+        key = array[i];
+        j = i - 1;
+
+        // Move elements of arr that are greater than key, to one position ahead of their current position
+        while (j > -1 && array[j] > key)
+        {
+            array[j + 1] = array[j];
+            j = j - 1;
+        }
+        array[j + 1] = key;
+    }
 }
